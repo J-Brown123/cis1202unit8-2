@@ -23,16 +23,16 @@ int main()
 			cout << "How much do you want to offset?\n";
 			cin >> num;
 			newChar = character(letter, num);
+			cout << "The new character is " << newChar << endl;
 		}
 		catch (string invalidCharacterException)
 		{
 			cout << invalidCharacterException;
 		}
-		catch (char invalidRangeException)
+		catch (int invalidRangeException)
 		{
-			cout << invalidRangeException;
+			cout << "ERROR: Offset put letter out of range.\n";
 		}
-		cout << "The new character is " << newChar << endl;
 		cout << "Do you want to do another?\n1 - Yes\n2 - No\n";
 		cin >> again;
 		while (again < 0 || again > 1)
@@ -48,7 +48,7 @@ char character(char start, int offset)
 {
 	char newChar;
 	string invalidCharacterException;
-	char invalidRangeException[] = "ERROR: Offset is out of range.\n";
+	int invalidRangeException = 0;
 	invalidCharacterException = "ERROR: Please input an uppercase or lowercase letter.\n";
 	if (!isupper(start) && !islower(start))
 		throw invalidCharacterException;
