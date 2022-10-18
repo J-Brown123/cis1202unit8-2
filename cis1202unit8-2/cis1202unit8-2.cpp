@@ -21,6 +21,7 @@ int main()
 			cout << "Input a beginning letter.\n";
 			cin >> letter;
 			cout << "How much do you want to offset?\n";
+
 		}
 	}
 	return 0;
